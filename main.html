@@ -8,17 +8,19 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="template.js"></script>
 </head>
 
 <body>
   <div class="container">
     <div class="header">
       <img src="assets/ЯндексДом.svg">
-      <a href="#report" class="active">Сводка</a>
-      <a href="#devices">Устройства</a>
-      <a href="#scenes">Сценарии</a>
+      <a href="" class="active">Сводка</a>
+      <a href="">Устройства</a>
+      <a href="">Сценарии</a>
       <a href="javascript:void(0);" onclick="myFunction()">
-        <div class="header-icon">
+        <div class="header-icon-container">
+          <div class="header-icon"></div>
         </div>
       </a>
     </div>
@@ -28,76 +30,20 @@
         Лента событий
       </div>
       <div class="menu-container-grid">
-		  
-        <div class="medium-card">
-			   <div class="medium-card-information">
-            <div class="thermal-icon">
-            </div>
-            <div class="medium-card-title-container">
-
-
-              <div class="medium-card-title">
-				Изменен климатический режим
-              </div>
-            </div>
-            <ul class="medium-card-cell-container">
-              <li class="medium-card-cell-sensors">
-                Сенсор микроклимата
-              </li>
-              <li class="medium-card-cell-date">
-                18:30, Сегодня
-              </li>
-            </ul>
-
-            <div class="medium-card-music-now-playing">
-              Установлен климатический режим «Фиджи»
-            </div>
-
-            <div class="medium-card-music-information">
-				<div class="medium-card-music-cover"></div>
-				</div>
-				
-				<div class="medium-card-music-title-container">
-					<div class="medium-card-music-title">
-						Rick Astley = Never gonna give you up
-					</div>
-					
-					
-					<input type="range" min="1" max="100" value="50" class="medium-card-music-slider" id="myRange">
-					
-										</div>
-										
-					<div class="medium-card-music-buttons">
-						<div class="medium-card-music-controlls">
-						<a href="" class="prev-icon"></a>
-						<a href="" class="next-icon"></a>
-						</div>
-						<div class="medium-card-volume-slider-container">
-							
-							
-						<input type="range" min="1" max="100" value="50" class="medium-card-volume-slider" id="myRange">
-					
-					</div>
-				</div>
-
-        
-          </div>
-        </div>
       </div>
     </div>
-  
 
-  <div class="footer">
-    <div class="item">
-      <a href="">Помощь</a>
-      <a href="">Обратная связь</a>
-      <a href="">Разработчикам</a>
-      <a href="">Условия использования</a>
-      <a href="../misc/license.pdf">Лицензия</a>
+    <div class="footer">
+      <div class="item">
+        <a href="">Помощь</a>
+        <a href="">Обратная связь</a>
+        <a href="">Разработчикам</a>
+        <a href="">Условия использования</a>
+        <a href="/misc/license.pdf">Лицензия</a>
+      </div>
     </div>
   </div>
-  </div>
-  <script src="script.js"></script>
+  <script src="peppa.js"></script>
 </body>
 
 </html>
