@@ -18,7 +18,7 @@ $.getJSON("events.json", function(data) {
 			</div>
 			<div class="card-white-block">
 				<div class="large-card-details">${value.description}</div>
-				<div touch-action=none class="large-card-image"></div>
+				<img class="large-card-image" src="assets2/bitmap.jpg" alt="${value.title}"></img>
 				<div class="large-card-onlitouch-line">
           <div class="large-card-zoom"><span>Приближение:</span><span class="large-card-zoom-value">100%</span></div>
           <div class="large-card-light"><span>Яркость:</span> <span class="large-card-light-value">100%</span></div>
