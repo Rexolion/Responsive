@@ -358,10 +358,31 @@ a {
   padding-right: 200px;
 }
 
+.medium-card-critical-sensors {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  margin-right: 17px;
+  font-family: ArialMT;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 200px;
+}
+
 .medium-card-cell-date {
   margin: 0;
   text-align: right;
   color: #333333;
+  white-space: nowrap;
+  font-family: ArialMT;
+}
+
+.medium-card-critical-cell-date {
+  margin: 0;
+  text-align: right;
+  color: #FFFFFF;
   white-space: nowrap;
   font-family: ArialMT;
 }
@@ -379,7 +400,16 @@ a {
   font-size: 24px;
   color: #333333;
   text-align: left;
-  padding: 15px 0 14px 68px;
+}
+
+.large-card-scrollbar {
+  width: 50%;
+  position: absolute;
+  height: 3px;
+  border-radius: 5px;
+  bottom: 1px;
+  background-color: #fff;
+  z-index: 5;
 }
 
 .large-card-information {
@@ -395,11 +425,19 @@ a {
 }
 
 .large-card-image {
-  background-image: url(assets2/get_it_from_mocks_:3.jpg);
+  background-image: url(assets2/bitmap.jpg);
   width: 100%;
   height: 424px;
   background-size: cover;
   border-radius: 20px;
+  background-position-x: 0;
+  background-position-y: 0;
+}
+
+.card-image-container {
+  touch-action: none;
+  overflow: hidden;
+  position: relative;
 }
 
 .large-card-details {
@@ -407,14 +445,13 @@ a {
   font-size: 24px;
   color: #333333;
   text-align: left;
-  padding: 26px 29px 31px 27px;
+  padding: 0 29px 31px 0x;
 }
 
 .stats-icon {
   background-image: url(assets2/line-chart.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -423,16 +460,48 @@ a {
   background-image: url(assets2/air-conditioner.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.card-white-block {
+  margin: -1px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #333333;
+  background: #fafafa;
+}
+
+.card-hovered-icon {
+  position: absolute;
+  right: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.card-hovered-icon-close {
+  top: 20px;
+}
+
+.large-card-critical .large-card-next-icon {
+  box-shadow: inset 0 0px 100px 0 #fafafa;
+  border-radius: 5px;
+}
+
+.card-title-line {
+  margin-bottom: 14px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 52px 1fr;
+  grid-gap: 16px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .key-icon {
   background-image: url(assets2/key.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -443,14 +512,12 @@ a {
   background-position: center;
   height: 52px;
   width: 52px;
-  position: absolute;
 }
 
 .router-icon {
   background-image: url(assets2/router.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -459,7 +526,6 @@ a {
   background-image: url(assets2/temperature.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -468,7 +534,6 @@ a {
   background-image: url(assets2/Icon.png);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -477,7 +542,6 @@ a {
   background-image: url(assets2/fridge.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -486,7 +550,6 @@ a {
   background-image: url(assets2/battery.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -495,7 +558,6 @@ a {
   background-image: url(assets2/cam-white.svg);
   height: 36px;
   width: 50px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -504,7 +566,6 @@ a {
   background-image: url(assets2/kettle.svg);
   height: 52px;
   width: 52px;
-  position: absolute;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -522,6 +583,17 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
+  color: #333333;
+}
+.card-small-list-critical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #FFFFFF;
+  padding-bottom: 20px;
 }
 
 .card-small-text-date {
@@ -530,20 +602,22 @@ a {
   margin-right: 17px;
   font-family: ArialMT;
   font-size: 18px;
-  color: #333333;
   text-align: right;
   white-space: nowrap;
 }
 
 .card-small-text-sensors {
-  padding-left: 27px;
   margin: 0;
   margin-right: 17px;
   font-family: ArialMT;
   font-size: 18px;
-  color: #333333;
   text-align: right;
   white-space: nowrap;
+}
+
+[touch-action="none"] {
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .header {
@@ -586,11 +660,28 @@ a {
   color: black;
 }
 
+.large-card-onlitouch-line {
+  justify-content: space-between;
+  font-size: 12px;
+  color: #333333;
+  margin-top: 16px;
+}
+
 .footer {
   grid-area: f;
   max-height: 61px;
   max-width: 100%;
   padding: 25px 0 40px 40px;
+}
+
+.card-picture-line-zoom {
+  pointer-events: none;
+  transform: scale(2);
+  transform-origin: left top;
+}
+
+.card-picture-line {
+  width: 100%;
 }
 
 .item a {
@@ -607,17 +698,32 @@ a {
 .footer a:hover {
   color: black;
 }
-.medium-card-critical {
-  background: #DB5341;
-  border-radius: 20px 20px 0 0;
-  z-index: 20px;
-  width: auto;
-  height: 184px;
+
+.critical-card-container {
+  background: #db5341;
+  border-radius: 20px;
+  color: white;
+  padding: 0;
+}
+
+.card-critical-block {
+  padding: 20px 20px 3px;
+}
+
+.critical-card-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
 }
 
 @media screen and (max-width: 600px) {
   .header a:not(:first-child) {
     display: none;
+  }
+  .medium-card-cell-container {
+    padding-bottom: 20px;
   }
   .menu-container {
     grid-area: m;
@@ -640,7 +746,6 @@ a {
     background-image: url(assets2/smart-home.svg);
     height: 35px;
     width: 32px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -655,6 +760,10 @@ a {
   .medium-card-title {
     font-size: 14px;
   }
+  .medium-card-critical-title {
+    font-size: 14px;
+    color: #FFFFFF;
+  }
   .medium-card-details {
     font-size: 18px;
     padding-bottom: 15px;
@@ -666,6 +775,16 @@ a {
   }
   .medium-card-cell-date {
     font-size: 12px;
+  }
+  .medium-card-critical-sensors {
+    padding-right: 100px;
+    font-size: 12px;
+    color: #FFFFFF;
+  }
+  .medium-card-critical-cell-date {
+    font-size: 12px;
+    color: #FFFFFF;
+    ;
   }
   .medium-card-cell-temperature {
     font-size: 14px;
@@ -685,7 +804,6 @@ a {
     background-image: url(assets2/009-wifi.svg);
     height: 34px;
     width: 31px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -693,7 +811,6 @@ a {
     background-image: url(assets2/thermal.svg);
     height: 52px;
     width: 52px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -701,7 +818,6 @@ a {
     background-image: url(assets2/music.svg);
     height: 36px;
     width: 36px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -709,7 +825,6 @@ a {
     background-image: url(assets2/006-fridge.svg);
     height: 36px;
     width: 36px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -717,7 +832,6 @@ a {
     background-image: url(assets2/010-battery.svg);
     height: 36px;
     width: 36px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -725,16 +839,13 @@ a {
     background-image: url(assets2/002-cctv.svg);
     height: 26px;
     width: 35px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 15px 0 0 27px;
   }
   .kettle-icon {
     background-image: url(assets2/hot-kettle.svg);
     height: 30px;
     width: 35px;
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -757,7 +868,6 @@ a {
     padding-top: 10px;
     white-space: nowrap;
   }
-
   .small-card-details {
     font-size: 12px;
     padding-bottom: 10px;
@@ -780,7 +890,6 @@ a {
   }
   .large-card-image {
     height: 247px;
-    touch-action: none;
   }
   .header img {
     padding: 30px 52px 33px 20px;
@@ -791,6 +900,12 @@ a {
   .large-card {
     grid-column: span 5;
     width: auto;
+  }
+  .large-card-onlitouch-line {
+    justify-content: space-between;
+    font-size: 12px;
+    color: #333333;
+    margin-top: 16px;
   }
   .small-card {
     height: auto;
@@ -813,6 +928,7 @@ a {
   }
   .large-card-details {
     font-size: 18px;
+    padding-bottom: 20px;
   }
   .large-card-heading {
     font-size: 14px;
@@ -826,12 +942,12 @@ a {
   }
   .card-small-list {
     padding-top: 10px;
+    padding: 10px 0 20px 0;
   }
   .header.responsive {
     position: relative;
   }
   .header.responsive .icon {
-    position: absolute;
     right: 0;
     top: 0;
   }
@@ -842,5 +958,4 @@ a {
   .medium-card-music-title {
     font-size: 18px;
   }
-
 }

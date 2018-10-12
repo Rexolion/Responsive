@@ -1,36 +1,43 @@
 $.getJSON("events.json", function(data) {
-  $.each(data.events, function(index, value) {
-  
-    if (value.size === "l") {
-      if (value.type === "critical") {
-        var largeCard = `
-							<div class="large-card">
-          <div class="information-container">
-            <div class="${value.icon}-icon"></div>
-            <div class="large-card-heading">
-              ${value.title}
-            </div>
-            <ul class="card-small-list">
-              <li class="card-small-text-sensors">${value.source}</li>
-              <li class="card-small-text-date">${value.time}</li>
-            </ul>
-            <div class="large-card-details">
-              ${value.description}
-            </div>
-          </div>
-          <div class="large-card-image">
-          </div>
-        </div>
+      $.each(data.events, function(index, value) {
+
+          if (value.size === "l") {
+            if (value.type === "critical") {
+              var largeCard = `
+				<div class="large-card card-critical">
+		<div class="critical-card-container">
+			<div class="card-critical-block">
+				<div class="card-title-line">
+					<div class="${value.icon}-icon"></div>
+					<div class="medium-card-critical-title">${value.title}</div>
+				</div>
+				<div class="card-small-list-critical">
+					<div class="card-small-text-sensors">${value.source}</div>
+					<div class="card-small-text-date">${value.time}</div>
+				</div>
+			</div>
+			<div class="card-white-block">
+				<div class="large-card-details">${value.description}</div>
+				<div touch-action=none class="large-card-image"></div>
+				<div class="large-card-onlitouch-line">
+          <div class="large-card-zoom"><span>Приближение:</span><span class="large-card-zoom-value">100%</span></div>
+          <div class="large-card-light"><span>Яркость:</span> <span class="large-card-light-value">100%</span></div>
+			</div>
+			</div>
+		</div>
+	</div>
 						   `;
-        $(".menu-container-grid").append(largeCard);
-      } else {
-        var largeCard = `
+              $(".menu-container-grid").append(largeCard);
+
+					}else {
+                var largeCard = `
 						<div class="large-card">
-          <div class="information-container">
+          <div class="card-title-line">
             <div class="${value.icon}-icon"></div>
             <div class="large-card-heading">
               ${value.title}
             </div>
+						</div>
             <ul class="card-small-list">
               <li class="card-small-text-sensors">${value.source}</li>
               <li class="card-small-text-date">${value.time}</li>
@@ -38,18 +45,17 @@ $.getJSON("events.json", function(data) {
             <div class="large-card-details">
               ${value.description}
             </div>
-          </div>
           <div class="large-card-graph">
           </div>
         </div>`;
-        $(".menu-container-grid").append(largeCard);
-      }
-    } else if (value.size === "s") {
-      var smallCard = `
+                $(".menu-container-grid").append(largeCard);
+              }
+            } else if (value.size === "s") {
+              var smallCard = `
 					   <div class="small-card">
         <div class="small-card-information">
-            <div class="${value.icon}-icon"></div>
-            <div class="small-card-title-container">
+            <div class="card-title-line">
+						<div class="${value.icon}-icon"></div>
               <div class="small-card-title">
                 ${value.title}
               </div>
@@ -67,42 +73,38 @@ $.getJSON("events.json", function(data) {
           </div>
         </div>
 					   `;
-      $(".menu-container-grid").append(smallCard);
-    } else if (value.size === "m") {
-      if (value.data === null) {
-        var mediumCard = `
+              $(".menu-container-grid").append(smallCard);
+            } else if (value.size === "m") {
+              if (value.type === "critical") {
+								var mediumCard = `
+								<div class="medium-card card-critical">
+						<div class="critical-card-container">
+							<div class="card-critical-block">
+								<div class="card-title-line">
+									<div class="${value.icon}-icon"></div>
+									<div class="medium-card-critical-title">${value.title}</div>
+								</div>
+								<div class="medium-card-cell-container">
+									<div class="medium-card-critical-sensors">${value.source}</div>
+									<div class="medium-card-critical-cell-date">${value.time}</div>
+								</div>
+							</div>
+							<div class="card-white-block">
+								<div class="medium-card-details">${value.description}</div>
+								<img src="assets2/cross-white.svg" class="card-hovered-icon card-hovered-icon-close">
+								<img src="assets2/Next.svg" class="card-hovered-icon  card-next-icon-next">
+							</div>
+						</div>
+					</div>
+					`;
+								$(".menu-container-grid").append(mediumCard);
+              } else if (value.data !== undefined) {
+                if (value.source === "Сенсор микроклимата") {
+                  var mediumCard = `
 						<div class="medium-card">
 			   <div class="medium-card-information">
-            <div class="${value.icon}-icon">
-            </div>
-            <div class="medium-card-title-container">
-              <div class="medium-card-title">
-				${value.title}
-              </div>
-            </div>
-            <ul class="medium-card-cell-container">
-              <li class="medium-card-cell-sensors">
-                ${value.source}
-              </li>
-              <li class="medium-card-cell-date">
-                ${value.time}
-              </li>
-            </ul>
-            <div class="medium-card-details">
-              ${value.description}
-            </div>
-          </div>
-          </div>
-						`;
-        $(".menu-container-grid").append(mediumCard);
-      } else if (value.data !== undefined) {
-        if (value.source === "Сенсор микроклимата") {
-          var mediumCard = `
-						<div class="medium-card">
-			   <div class="medium-card-information">
-            <div class="${value.icon}-icon">
-            </div>
-            <div class="medium-card-title-container">
+            <div class="card-title-line">
+						<div class="${value.icon}-icon"></div>
               <div class="medium-card-title">
 				${value.title}
               </div>
@@ -129,14 +131,14 @@ $.getJSON("events.json", function(data) {
           </div>
           </div>
 						`;
-          $(".menu-container-grid").append(mediumCard);
-        } else if (value.source === "Яндекс.Станция") {
-          var mediumCard = `
+                  $(".menu-container-grid").append(mediumCard);
+							}else if (value.source === "Яндекс.Станция") {
+                  var mediumCard = `
 						<div class="medium-card">
 			   <div class="medium-card-information">
-            <div class="${value.icon}-icon">
-            </div>
-            <div class="medium-card-title-container">
+            <div class="card-title-line">
+						<div class="${value.icon}-icon">
+						</div>
               <div class="medium-card-title">
 				${value.title}
               </div>
@@ -172,17 +174,14 @@ $.getJSON("events.json", function(data) {
 				</div>
 
 						`;
-          $(".menu-container-grid").append(mediumCard);
-        } else if (value.source === "Холодильник") {
-          var mediumCard = `
+                  $(".menu-container-grid").append(mediumCard);
+                } else if (value.source === "Холодильник") {
+                  var mediumCard = `
 							<div class="medium-card">
 			   <div class="medium-card-information">
-            <div class="${value.icon}-icon">
-            </div>
-            <div class="medium-card-title-container">
-              <div class="medium-card-title">
-				${value.title}
-              </div>
+            <div class="card-title-line">
+						<div class="${value.icon}-icon"></div>
+              <div class="medium-card-title">${value.title}</div>
             </div>
             <ul class="medium-card-cell-container">
               <li class="medium-card-cell-sensors">
@@ -206,11 +205,11 @@ $.getJSON("events.json", function(data) {
           </div>
           </div>
           `;
-          $(".menu-container-grid").append(mediumCard);
-        }
+                  $(".menu-container-grid").append(mediumCard);
+                }
 
-      }
-    }
+              }
+            }
 
-  });
-});
+          });
+      });
