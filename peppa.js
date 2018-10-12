@@ -46,20 +46,23 @@ window.onload = function() {
     }
 
     const onmove = (ev) => {
-        // запись касания в кеш
+
+        // Write touch to cache
         for (let i = 0; i < eventCache.length; i++) {
             if (ev.pointerId == eventCache[i].pointerId) {
                 eventCache[i] = ev;
                 break;
             }
         }
-        // если одно нажатие
+
+
+        // If one touch
         if (eventCache.length == 1) {
             cardImage.style.backgroundPosition = (startBackX + ev.clientX - startPosX) + "px " + (startBackY + ev.clientY - startPosY) + "px";
             console.log("One touch");
         }
 
-        // если два нажатия
+        // If two touches
         if (eventCache.length == 2) {
           console.log("Multiple touches")
             // рассчет дистанции между двумя пальцами
