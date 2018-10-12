@@ -47,7 +47,7 @@ window.onload = function() {
 
     const onmove = (ev) => {
 
-        // Write touch to cache
+        // Put touches to cache
         for (let i = 0; i < eventCache.length; i++) {
             if (ev.pointerId == eventCache[i].pointerId) {
                 eventCache[i] = ev;
@@ -59,12 +59,10 @@ window.onload = function() {
         // If one touch
         if (eventCache.length == 1) {
             cardImage.style.backgroundPosition = (startBackX + ev.clientX - startPosX) + "px " + (startBackY + ev.clientY - startPosY) + "px";
-            console.log("One touch");
         }
 
         // If two touches
         if (eventCache.length == 2) {
-          console.log("Multiple touches")
             // рассчет дистанции между двумя пальцами
             let diff = dist(eventCache[0].clientX, eventCache[0].clientY, eventCache[1].clientX, eventCache[1].clientY)
             if (diff > prevDiff) {

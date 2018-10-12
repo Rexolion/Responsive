@@ -32,6 +32,7 @@ $.getJSON("events.json", function(data) {
 					}else {
                 var largeCard = `
 						<div class="large-card">
+            <div class="large-card-container">
           <div class="card-title-line">
             <div class="${value.icon}-icon"></div>
             <div class="large-card-heading">
@@ -46,6 +47,7 @@ $.getJSON("events.json", function(data) {
               ${value.description}
             </div>
           <div class="large-card-graph">
+          </div>
           </div>
         </div>`;
                 $(".menu-container-grid").append(largeCard);
