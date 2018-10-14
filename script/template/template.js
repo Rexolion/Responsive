@@ -1,4 +1,4 @@
-$.getJSON("events.json", function(data) {
+$.getJSON("/script/template/data/events.json", function(data) {
       $.each(data.events, function(index, value) {
 
           if (value.size === "l") {
@@ -17,11 +17,15 @@ $.getJSON("events.json", function(data) {
 				</div>
 			</div>
 			<div class="card-white-block">
-				<div class="large-card-details">${value.description}</div>
-				<img class="large-card-image" src="assets2/bitmap.jpg" alt="${value.title}"></img>
+        <div class="large-card-details">${value.description}</div>
+        <div class="large-card-image-container">
+        <img class="large-card-image" id="cam" src="assets2/bitmap.jpg" alt="${value.title}"></img>
+        </div>
 				<div class="large-card-onlitouch-line">
           <div class="large-card-zoom"><span>Приближение:</span><span class="large-card-zoom-value">100%</span></div>
           <div class="large-card-light"><span>Яркость:</span> <span class="large-card-light-value">100%</span></div>
+          <div>Scroll Y <span id="large-card-image-vertical">0%</span></div>
+          <div>Scroll X <span id="large-card-image-horizontal">0%</span></div>
 			</div>
 			</div>
 		</div>
@@ -163,7 +167,7 @@ $.getJSON("events.json", function(data) {
 					<div class="medium-card-music-title">
 						${value.data.artist} ${value.data.track.name}
 					</div>
-					<input type="range" min="1" max="100" value="50" class="medium-card-music-slider" id="myRange">
+					<input type="range" min="1" max="100" value="50" class="medium-card-music-slider">
 										</div>
 					<div class="medium-card-music-buttons">
 						<div class="medium-card-music-controlls">
@@ -171,7 +175,7 @@ $.getJSON("events.json", function(data) {
 						<a href="" class="next-icon"></a>
 						</div>
 						<div class="medium-card-volume-slider-container">
-						<input type="range" min="1" max="100" value="50" class="medium-card-volume-slider" id="myRange">
+						<input type="range" min="1" max="100" value="50" class="medium-card-volume-slider">
 					</div>
 				</div>
 

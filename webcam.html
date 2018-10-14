@@ -8,25 +8,26 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body>
   <div class="container">
     <div class="header">
       <img alt="Яндекс Дом" src="/style/assets/ЯндексДом.svg">
-      <a href="main.html" class="active">Сводка</a>
+      <a href="main.html" >Сводка</a>
       <a href="">Устройства</a>
       <a href="">Сценарии</a>
-      <a href="webcam.html">Видеонаблюдение</a>
+      <a href="webcam.html" class="active">Видеонаблюдение</a>
       </a>
     </div>
 
     <div class="menu-container">
       <div class="events-heading">
-        Лента событий
+        Видеонаблюдение
       </div>
-      <div class="menu-container-grid">
-    </div>
+      <div class="camera-list"></div>
+    
   </div>
 
     <div class="footer">
@@ -40,9 +41,6 @@
     </div>
   </div>
 
-  <script src="/script/template/template.js"></script>
-  <script src="/script/pointerEvents/pep.js"></script>
-  <script src="/script/pointerEvents/peppa.js"></script>
 </body>
 
 </html>

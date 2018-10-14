@@ -1,0 +1,26 @@
+{
+  "name": "shri_ht_responsive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pep.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rexolion/Responsive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rexolion/Responsive/issues"
+  },
+  "homepage": "https://github.com/Rexolion/Responsive#readme",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-google": "^0.10.0"
+  },
+  "dependencies": {
+    "hls": "0.0.1"
+  }
+}

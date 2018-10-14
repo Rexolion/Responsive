@@ -127,8 +127,6 @@ body {
   padding-top: 25px;
 }
 
-.medium-card-music-information {}
-
 .medium-card-music-title-container {
   padding-left: 80px;
   padding-right: 50px
@@ -139,8 +137,6 @@ body {
   font-family: Arial-BoldMT;
   font-size: 20px
 }
-
-.medium-card-music-buttons {}
 
 .events-heading {
   font-family: Arial-BoldMT;
