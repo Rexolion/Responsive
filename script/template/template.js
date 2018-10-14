@@ -21,11 +21,6 @@ $.getJSON("/script/template/data/events.json", function(data) {
         <div class="large-card-image-container">
         <img class="large-card-image" id="cam" src="/style/assets2/bitmap.jpg" alt="${value.title}"></img>
         </div>
-				<div class="large-card-onlitouch-line">
-          <div class="large-card-zoom"><span>Приближение:</span><span class="large-card-zoom-value">100%</span></div>
-          <div class="large-card-light"><span>Яркость:</span> <span class="large-card-light-value">100%</span></div>
-          <div>Scroll Y <span id="large-card-image-vertical">0%</span></div>
-          <div>Scroll X <span id="large-card-image-horizontal">0%</span></div>
 			</div>
 			</div>
 		</div>
@@ -97,8 +92,8 @@ $.getJSON("/script/template/data/events.json", function(data) {
 							</div>
 							<div class="card-white-block">
 								<div class="medium-card-details">${value.description}</div>
-								<img src="assets2/cross-white.svg" class="card-hovered-icon card-hovered-icon-close">
-								<img src="assets2/Next.svg" class="card-hovered-icon  card-next-icon-next">
+								<img src="/style/assets2/cross-white.svg" class="card-hovered-icon card-hovered-icon-close">
+								<img src="/style/assets2/Next.svg" class="card-hovered-icon  card-next-icon-next">
 							</div>
 						</div>
 					</div>
