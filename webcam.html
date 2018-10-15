@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="style/style.css">
-  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
@@ -27,7 +26,7 @@
         Видеонаблюдение
       </div>
       <section class="stream">
-        <div class="stream-row">
+        <div class="stream__row">
           <div class="stream__video__container">
             <video id="video-1" class="stream__video" controls muted autoplay></video>
             <a href="#popup-stream" class="stream__btn-expend">+</a>
@@ -36,6 +35,7 @@
             <video id="video-2" class="stream__video" controls muted autoplay></video>
             <a href="#popup-stream" class="stream__btn-expend">+</a>
           </div>
+        
           <div class="stream__video__container">
             <video id="video-3" class="stream__video" controls muted autoplay></video>
             <a href="#popup-stream" class="stream__btn-expend">+</a>
@@ -45,9 +45,9 @@
             <a href="#popup-stream" class="stream__btn-expend">+</a>
           </div>
         </div>
-    </div>
+            </div>
     </section>
-  </div>
+
 
   <script>
     function initVideo(video, url) {
@@ -130,7 +130,7 @@
       </div>
   
   </div>
-  <script src="/script/multimedia/main.js"></script>
+  <script type="module" src="script/multimedia/main.js"></script>
 </body>
 
 </html>

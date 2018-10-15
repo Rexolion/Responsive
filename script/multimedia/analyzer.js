@@ -1,13 +1,13 @@
-class Analyse {
+class Analyze {
 	constructor(videoElement) {
 		this.video = videoElement;
 
-		//creating analyser
+		//creating analyzer
 		this.node = context.createScriptProcessor(2048, 1, 1);
-		this.analyser = context.createAnalyser();
-		this.analyser.smoothingTimeConstant = 0.3;
-		this.analyser.fftSize = 512;
-		this.dataArray = new Uint8Array(this.analyser.frequencyBinCount);
+		this.analyzer = context.createAnalyzer();
+		this.analyzer.smoothingTimeConstant = 0.3;
+		this.analyzer.fftSize = 512;
+		this.dataArray = new Uint8Array(this.analyzer.frequencyBinCount);
 
 		this.isDrawing = true;
 
@@ -28,8 +28,8 @@ class Analyse {
         }
         
         //connections to audio source and destination
-		source.connect(this.analyser);
-		this.analyser.connect(this.node);
+		source.connect(this.analyzer);
+		this.analyzer.connect(this.node);
 		this.node.connect(context.destination);
 		source.connect(context.destination);
 	}
@@ -40,7 +40,7 @@ class Analyse {
 			return;
 		}
 		requestAnimationFrame(() => this.draw());
-		this.analyser.getByteFrequencyData(this.dataArray);
+		this.analyzer.getByteFrequencyData(this.dataArray);
 
 		const barHeight = average(this.dataArray);
 

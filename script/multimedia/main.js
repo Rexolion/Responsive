@@ -1,6 +1,6 @@
-import {ExpandedCamera} from "./ExpandedCamera.js";
-import {CANVAS} from "./Analyse.js";
-
+import {ExpandedCamera} from "./expandedCamera.js";
+import {CANVAS} from "./analyzer.js";
+console.log("Workig");
 const CONTROLS = {
 	brightness: document.querySelector("#input-brightness"),
 	contrast: document.querySelector("#input-contrast"),
@@ -37,7 +37,7 @@ class streamControl {
 
 	// init video opening
 	_expandVideo() {
-		this._expandedCamera = new ExpandedCamera(this, CONTROLS,streamSELECTORS, CANVAS);
+		this._expandedCamera = new ExpandedCamera(this, CONTROLS, STREAMSELECTORS, CANVAS);
 	}
 }
 

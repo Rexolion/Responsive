@@ -1,4 +1,4 @@
-import {resetCanvas, Analyse} from "./Analyse.js";
+import {resetCanvas, Analyze} from "./analyzer.js";
 
 class ExpandedCamera {
 	constructor(video, properties, streamSelectors, canvas) {
@@ -8,12 +8,12 @@ class ExpandedCamera {
 		this._canvas = canvas;
 		this._streamSelectors = streamSelectors;
 
-		//web audio api analyser
-		this._analyser = new Analyse(this._video.element);
+		//web audio api analyzer
+		this._analyzer = new Analyze(this._video.element);
 
 		this._eventsHandling();
 		this._expand();
-		this._analyser.draw();
+		this._analyzer.draw();
 	}
 
 	//setting events listeners
@@ -74,7 +74,7 @@ class ExpandedCamera {
 		this._streamSelectors.videoContainers[this._video.id].appendChild(this._video.element);
 		if (this._streamSelectors.streamContainer.children.length) this._streamSelectors.streamContainer.removeChild(this._streamSelectors.streamContainer.children[0]);
 		
-		this._analyser.isDrawing = false;
+		this._analyzer.isDrawing = false;
 		this._video.element.muted = true;
 		this._video.element.controls = false;
 		this._video.element.play();
