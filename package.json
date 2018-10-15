@@ -2,8 +2,11 @@
   "name": "shri_ht_responsive",
   "version": "1.0.0",
   "description": "",
-  "main": "pep.js",
+  "main": "main.html",
   "scripts": {
+    "murphy": "murphy",
+    "http-server": "http-server -p 3102 --cors",
+    "start": "run-p http-server murphy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +24,11 @@
     "eslint-config-google": "^0.10.0"
   },
   "dependencies": {
-    "hls": "0.0.1"
+    "@videojs/murphy": "^0.1.1",
+    "hls": "0.0.1",
+    "hls.js": "^0.11.0",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.3"
   }
 }
+
