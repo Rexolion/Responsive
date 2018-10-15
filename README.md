@@ -4,6 +4,6 @@
 ```
 - npm i 
 - npm start
-- Зайти на http://127.0.0.1:3102/main.html
+- Зайти на http://localhost:3102/main.html
 - Перейти во вкладку Видеонаблюдение
 ```
