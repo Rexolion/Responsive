@@ -1,22 +1,21 @@
-// Логика работы видеонаблюдения
+
 const initCamObserv = () => {
-  // Инициализация видеонаблюдения
   let activeVideoBrightness = 100;
   let activeVideoContrast = 100;
 
-  // Очистка изменения яркости и контрастности
+
   const onup = () => {
     document.removeEventListener("pointermove", setBrightness);
     document.removeEventListener("pointermove", setContrast);
   };
-  // Позиционирования видео
+  // Positioning
   const toPos = (cam: HTMLVideoElement, x?: number, y?: number): void => {
     if (x === undefined) x = cam.getBoundingClientRect().left;
     if (y === undefined) y = cam.getBoundingClientRect().top;
     cam.style.top = -y + "px";
     cam.style.left = -x + "px";
   };
-  // Увеличение и свертывание видео
+  // Zoom video
   function zoom(ev: PointerEvent) {
     const bg: HTMLElement = <HTMLElement>document.querySelector("html");
 
@@ -29,7 +28,7 @@ const initCamObserv = () => {
       const analyser: HTMLElement = <HTMLElement>(
         analyserPar.querySelector(".analyser")
       );
-      // Если мы кликнули по активному видео
+      // Click on active video
       if (cam.classList.contains("video_active")) {
         controls.classList.remove("video-controls_active");
         analyser.classList.remove("analyser_active");
@@ -42,7 +41,7 @@ const initCamObserv = () => {
           bg.style.overflow = "scroll";
         }, 500);
       } else {
-        // выставляем положение регуляторов соответственно уровням настроек на видео
+        // set controlls
         if (cam.style.filter === "") {
           setControls("100", "100");
         } else if (cam.style.filter) {
@@ -66,7 +65,7 @@ const initCamObserv = () => {
       }
     }
   }
-  // Установка CSS - фильтров
+  // Set filter
   const setFilter = (): void => {
     const activeVideo: HTMLVideoElement = <HTMLVideoElement>(
       document.querySelector(".video_active")
@@ -80,35 +79,35 @@ const initCamObserv = () => {
   };
   const setControls = (b: string, c: string): void => {
     const brInput: HTMLInputElement = <HTMLInputElement>(
-      document.querySelector(".video-control_brightness")
+      document.querySelector(".popup__slider--light")
     );
     const conInput: HTMLInputElement = <HTMLInputElement>(
-      document.querySelector(".video-control_contrast")
+      document.querySelector(".popup__slider--temperature")
     );
     brInput.value = b;
     conInput.value = c;
   };
-  // Установка яркости
+  // Brightness
   const setBrightness = (ev: PointerEvent): void => {
     const br: HTMLInputElement = <HTMLInputElement>ev.target;
     activeVideoBrightness = parseInt(br.value, 10);
     setFilter();
   };
-  // Установка контрастности
+  // Contrast
   const setContrast = (ev: PointerEvent): void => {
     const cn: HTMLInputElement = <HTMLInputElement>ev.target;
     activeVideoContrast = parseInt(cn.value, 10);
     setFilter();
   };
-  // установка яркости и контрастности
+  // Set brightness and contrast
   const videoSet = (ev: PointerEvent): void => {
     const control: HTMLInputElement = <HTMLInputElement>ev.target;
-    if (control.classList.contains("video-control_brightness"))
+    if (control.classList.contains("popup__slider--light"))
       document.addEventListener("pointermove", setBrightness);
-    if (control.classList.contains("video-control_contrast"))
+    if (control.classList.contains("popup__slider--temperature "))
       document.addEventListener("pointermove", setContrast);
   };
-  // включение и выключение звука
+  // Increase / decrease volume
   const toggleVolume = (ev: PointerEvent): void => {
     const mt: HTMLElement = <HTMLElement>ev.target;
     if (mt.dataset.video) {
@@ -120,7 +119,7 @@ const initCamObserv = () => {
       mt.classList.toggle("video-volume_unmuted");
     }
   };
-  // анализатор
+  // Analyzer
 
   const analyse = (cam: HTMLVideoElement): void => {
     const context: AudioContext = new AudioContext();
@@ -142,7 +141,6 @@ const initCamObserv = () => {
         analyserBlock.style.height = v + "px";
       }
     }, 100);
-    // соединяем аудио-ноды
     source.connect(analyser);
     analyser.connect(context.destination);
   };

@@ -1,4 +1,7 @@
-import { jsonEvents, jsonEventsObject } from "./template.interface";
+import {
+  jsonEvents,
+  jsonEventsObject
+} from "./template.interface";
 export class Cards {
   getLargeCardCritical(value: jsonEventsObject) {
     let largeCardCritical = `
