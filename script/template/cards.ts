@@ -1,9 +1,7 @@
-$.getJSON("/script/template/data/events.json", function(data) {
-      $.each(data.events, function(index, value) {
-
-          if (value.size === "l") {
-            if (value.type === "critical") {
-              var largeCard = `
+import { jsonEvents, jsonEventsObject } from "./template.interface";
+export class Cards {
+  getLargeCardCritical(value: jsonEventsObject) {
+    let largeCardCritical = `
 				<div class="large-card card-critical">
 		<div class="critical-card-container">
 			<div class="card-critical-block">
@@ -19,40 +17,43 @@ $.getJSON("/script/template/data/events.json", function(data) {
 			<div class="card-white-block">
         <div class="large-card-details">${value.description}</div>
         <div class="large-card-image-container">
-        <img class="large-card-image" id="cam" src="/style/assets2/bitmap.jpg" alt="${value.title}"></img>
+        <img class="large-card-image" id="cam" src="/style/assets2/bitmap.jpg" alt="${
+          value.title
+        }"></img>
         </div>
 			</div>
 			</div>
 		</div>
 	</div>
-						   `;
-              $(".menu-container-grid").append(largeCard);
+    `;
 
-					}else {
-                var largeCard = `
-						<div class="large-card">
-            <div class="large-card-container">
-          <div class="card-title-line">
-            <div class="${value.icon}-icon"></div>
-            <div class="large-card-heading">
-              ${value.title}
-            </div>
-						</div>
-            <ul class="card-small-list">
-              <li class="card-small-text-sensors">${value.source}</li>
-              <li class="card-small-text-date">${value.time}</li>
-            </ul>
-            <div class="large-card-details">
-              ${value.description}
-            </div>
-          <div class="large-card-graph">
-          </div>
-          </div>
-        </div>`;
-                $(".menu-container-grid").append(largeCard);
-              }
-            } else if (value.size === "s") {
-              var smallCard = `
+    return largeCardCritical;
+  }
+  getLargeCardGraph(value: jsonEventsObject) {
+    let largeCardGraph = `
+        <div class="large-card">
+<div class="large-card-container">
+<div class="card-title-line">
+<div class="${value.icon}-icon"></div>
+<div class="large-card-heading">
+${value.title}
+</div>
+        </div>
+<ul class="card-small-list">
+<li class="card-small-text-sensors">${value.source}</li>
+<li class="card-small-text-date">${value.time}</li>
+</ul>
+<div class="large-card-details">
+${value.description}
+</div>
+<div class="large-card-graph">
+</div>
+</div>
+</div>`;
+    return largeCardGraph;
+  }
+  getSmallCardStandart(value: jsonEventsObject) {
+    let smallCardStandart = `
 					   <div class="small-card">
         <div class="small-card-information">
             <div class="card-title-line">
@@ -73,11 +74,11 @@ $.getJSON("/script/template/data/events.json", function(data) {
             </ul>
           </div>
         </div>
-					   `;
-              $(".menu-container-grid").append(smallCard);
-            } else if (value.size === "m") {
-              if (value.type === "critical") {
-								var mediumCard = `
+        `;
+    return smallCardStandart;
+  }
+  getMediumCardCritical(value: jsonEventsObject) {
+    let mediumCardCritical = `
 								<div class="medium-card card-critical">
 						<div class="critical-card-container">
 							<div class="card-critical-block">
@@ -97,11 +98,11 @@ $.getJSON("/script/template/data/events.json", function(data) {
 							</div>
 						</div>
 					</div>
-					`;
-								$(".menu-container-grid").append(mediumCard);
-              } else if (value.data !== undefined) {
-                if (value.source === "Сенсор микроклимата") {
-                  var mediumCard = `
+                    `;
+    return mediumCardCritical;
+  }
+  getMediumCardSensor(value: jsonEventsObject) {
+    let mediumCardSensor = `
 						<div class="medium-card">
 			   <div class="medium-card-information">
             <div class="card-title-line">
@@ -131,10 +132,11 @@ $.getJSON("/script/template/data/events.json", function(data) {
             </ul>
           </div>
           </div>
-						`;
-                  $(".menu-container-grid").append(mediumCard);
-							}else if (value.source === "Яндекс.Станция") {
-                  var mediumCard = `
+                        `;
+    return mediumCardSensor;
+  }
+  getMediumCardMusic(value: jsonEventsObject) {
+    let mediumCardMusic = `
 						<div class="medium-card">
 			   <div class="medium-card-information">
             <div class="card-title-line">
@@ -174,10 +176,11 @@ $.getJSON("/script/template/data/events.json", function(data) {
 					</div>
 				</div>
 
-						`;
-                  $(".menu-container-grid").append(mediumCard);
-                } else if (value.source === "Холодильник") {
-                  var mediumCard = `
+                        `;
+    return mediumCardMusic;
+  }
+  getMediumCardFridge(value: jsonEventsObject) {
+    let mediumCardFridge = `
 							<div class="medium-card">
 			   <div class="medium-card-information">
             <div class="card-title-line">
@@ -206,11 +209,6 @@ $.getJSON("/script/template/data/events.json", function(data) {
           </div>
           </div>
           `;
-                  $(".menu-container-grid").append(mediumCard);
-                }
-
-              }
-            }
-
-          });
-      });
+    return mediumCardFridge;
+  }
+}
