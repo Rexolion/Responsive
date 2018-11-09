@@ -3,31 +3,30 @@ const initCamObserv = () => {
   let activeVideoBrightness = 100;
   let activeVideoContrast = 100;
 
-
   const onup = () => {
     document.removeEventListener("pointermove", setBrightness);
     document.removeEventListener("pointermove", setContrast);
   };
   // Positioning
   const toPos = (cam: HTMLVideoElement, x?: number, y?: number): void => {
-    if (x === undefined) x = cam.getBoundingClientRect().left;
-    if (y === undefined) y = cam.getBoundingClientRect().top;
+    if (x === undefined) { x = cam.getBoundingClientRect().left; }
+    if (y === undefined) { y = cam.getBoundingClientRect().top; }
     cam.style.top = -y + "px";
     cam.style.left = -x + "px";
   };
   // Zoom video
   function zoom(ev: PointerEvent) {
-    const bg: HTMLElement = <HTMLElement>document.querySelector("html");
+    const bg: HTMLElement = document.querySelector("html") as HTMLElement;
 
-    const controls: HTMLElement = <HTMLElement>(
+    const controls: HTMLElement = (
       document.querySelector(".video-controls")
-    );
-    const cam: HTMLVideoElement = <HTMLVideoElement>ev.target;
+    ) as HTMLElement;
+    const cam: HTMLVideoElement = ev.target as HTMLVideoElement;
     if (cam.parentNode) {
-      const analyserPar: HTMLElement = <HTMLElement>cam.parentNode;
-      const analyser: HTMLElement = <HTMLElement>(
+      const analyserPar: HTMLElement = cam.parentNode as HTMLElement;
+      const analyser: HTMLElement = (
         analyserPar.querySelector(".analyser")
-      );
+      ) as HTMLElement;
       // Click on active video
       if (cam.classList.contains("video_active")) {
         controls.classList.remove("video-controls_active");
@@ -52,7 +51,7 @@ const initCamObserv = () => {
           let cnn: RegExpExecArray | null;
           bra = regBr.exec(filterVal);
           cnn = regCn.exec(filterVal);
-          if (bra && cnn) setControls(bra[1], cnn[1]);
+          if (bra && cnn) { setControls(bra[1], cnn[1]); }
         }
 
         bg.style.overflow = "hidden";
@@ -67,9 +66,9 @@ const initCamObserv = () => {
   }
   // Set filter
   const setFilter = (): void => {
-    const activeVideo: HTMLVideoElement = <HTMLVideoElement>(
+    const activeVideo: HTMLVideoElement = (
       document.querySelector(".video_active")
-    );
+    ) as HTMLVideoElement;
     activeVideo.style.filter =
       "brightness(" +
       activeVideoBrightness +
@@ -78,43 +77,45 @@ const initCamObserv = () => {
       "%)";
   };
   const setControls = (b: string, c: string): void => {
-    const brInput: HTMLInputElement = <HTMLInputElement>(
+    const brInput: HTMLInputElement = (
       document.querySelector(".popup__slider--light")
-    );
-    const conInput: HTMLInputElement = <HTMLInputElement>(
+    ) as HTMLInputElement;
+    const conInput: HTMLInputElement = (
       document.querySelector(".popup__slider--temperature")
-    );
+    ) as HTMLInputElement;
     brInput.value = b;
     conInput.value = c;
   };
   // Brightness
   const setBrightness = (ev: PointerEvent): void => {
-    const br: HTMLInputElement = <HTMLInputElement>ev.target;
+    const br: HTMLInputElement = ev.target as HTMLInputElement;
     activeVideoBrightness = parseInt(br.value, 10);
     setFilter();
   };
   // Contrast
   const setContrast = (ev: PointerEvent): void => {
-    const cn: HTMLInputElement = <HTMLInputElement>ev.target;
+    const cn: HTMLInputElement = ev.target as HTMLInputElement;
     activeVideoContrast = parseInt(cn.value, 10);
     setFilter();
   };
   // Set brightness and contrast
   const videoSet = (ev: PointerEvent): void => {
-    const control: HTMLInputElement = <HTMLInputElement>ev.target;
-    if (control.classList.contains("popup__slider--light"))
+    const control: HTMLInputElement = ev.target as HTMLInputElement;
+    if (control.classList.contains("popup__slider--light")) {
       document.addEventListener("pointermove", setBrightness);
-    if (control.classList.contains("popup__slider--temperature "))
+    }
+    if (control.classList.contains("popup__slider--temperature ")) {
       document.addEventListener("pointermove", setContrast);
+    }
   };
   // Increase / decrease volume
   const toggleVolume = (ev: PointerEvent): void => {
-    const mt: HTMLElement = <HTMLElement>ev.target;
+    const mt: HTMLElement = ev.target as HTMLElement;
     if (mt.dataset.video) {
       const mtId: string = mt.dataset.video;
-      const video: HTMLVideoElement = <HTMLVideoElement>(
+      const video: HTMLVideoElement = (
         document.getElementById(mtId)
-      );
+      ) as HTMLVideoElement;
       video.muted = !video.muted;
       mt.classList.toggle("video-volume_unmuted");
     }
@@ -134,10 +135,10 @@ const initCamObserv = () => {
       let v = 0;
       v = bands.reduce((a: number, b: number): number => (a > b ? a : b), 0);
       if (cam.parentNode) {
-        const analyserPar: HTMLElement = <HTMLElement>cam.parentNode;
-        const analyserBlock: HTMLElement = <HTMLElement>(
+        const analyserPar: HTMLElement = cam.parentNode as HTMLElement;
+        const analyserBlock: HTMLElement = (
           analyserPar.querySelector(".analyser")
-        );
+        ) as HTMLElement;
         analyserBlock.style.height = v + "px";
       }
     }, 100);
@@ -150,27 +151,27 @@ const initCamObserv = () => {
 
   cams.forEach(
     (cam: Element): void => {
-      cam.addEventListener("pointerdown", x => {
-        zoom(<PointerEvent>x);
+      cam.addEventListener("pointerdown", (x) => {
+        zoom(x as PointerEvent);
       });
-      analyse(<HTMLVideoElement>cam);
-    }
+      analyse(cam as HTMLVideoElement);
+    },
   );
 
   const controlInputs: Element[] = [
-    ...document.getElementsByClassName("video-control")
+    ...document.getElementsByClassName("video-control"),
   ];
   controlInputs.forEach((control: Element) => {
-    control.addEventListener("pointerdown", x => {
-      videoSet(<PointerEvent>x);
+    control.addEventListener("pointerdown", (x) => {
+      videoSet(x as PointerEvent);
     });
   });
   const volumeControls: Element[] = [
-    ...document.getElementsByClassName("video-volume")
+    ...document.getElementsByClassName("video-volume"),
   ];
   volumeControls.forEach((control: Element) => {
-    control.addEventListener("pointerdown", x => {
-      toggleVolume(<PointerEvent>x);
+    control.addEventListener("pointerdown", (x) => {
+      toggleVolume(x as PointerEvent);
     });
   });
   document.addEventListener("pointerup", onup);

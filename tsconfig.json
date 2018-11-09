@@ -1,12 +1,4 @@
 {
-  "files": [
-    "script/multimedia/multimedia.ts",
-    "script/pointerEvents/peppa.ts",
-    "script/template/template.interface.ts",
-    "script/template/cards.ts",
-    "script/template/template.ts",
-    "script/app.ts"
-],
   "compilerOptions": {
     /* Basic Options */
     "baseUrl": "./",
@@ -30,13 +22,13 @@
     // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
 
     /* Strict Type-Checking Options */
-    "strict": true,                           /* Enable all strict type-checking options. */
+    //"strict": true,                           /* Enable all strict type-checking options. */
     "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
     // "strictNullChecks": true,              /* Enable strict null checks. */
-    // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+     "strictFunctionTypes": true,           /* Enable strict checking of function types. */
     // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
-    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
-    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+     "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+     "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
 
     /* Additional Checks */
     // "noUnusedLocals": true,                /* Report errors on unused locals. */
@@ -67,6 +59,9 @@
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   }, 
+  "include": [
+    "script/"
+  ],
   "exclude": [
     "**/node_modules/*" ]
 }

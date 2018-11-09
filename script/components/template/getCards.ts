@@ -1,8 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Cards {
-    getLargeCardCritical(value) {
-        let largeCardCritical = `
+import { IJsonEvents, IJsonEventsObject} from "./template.interface";
+export class Cards {
+  public getLargeCardCritical(value: IJsonEventsObject) {
+    const largeCardCritical = `
 				<div class="large-card card-critical">
 		<div class="critical-card-container">
 			<div class="card-critical-block">
@@ -18,17 +17,20 @@ class Cards {
 			<div class="card-white-block">
         <div class="large-card-details">${value.description}</div>
         <div class="large-card-image-container">
-        <img class="large-card-image" id="cam" src="/style/assets2/bitmap.jpg" alt="${value.title}"></img>
+        <img class="large-card-image" id="cam" src="/style/assets2/bitmap.jpg" alt="${
+      value.title
+      }"></img>
         </div>
 			</div>
 			</div>
 		</div>
 	</div>
     `;
-        return largeCardCritical;
-    }
-    getLargeCardGraph(value) {
-        let largeCardGraph = `
+
+    return largeCardCritical;
+  }
+  public getLargeCardGraph(value: IJsonEventsObject) {
+    const largeCardGraph = `
         <div class="large-card">
 <div class="large-card-container">
 <div class="card-title-line">
@@ -48,10 +50,10 @@ ${value.description}
 </div>
 </div>
 </div>`;
-        return largeCardGraph;
-    }
-    getSmallCardStandart(value) {
-        let smallCardStandart = `
+    return largeCardGraph;
+  }
+  public getSmallCardStandart(value: IJsonEventsObject) {
+    const smallCardStandart = `
 					   <div class="small-card">
         <div class="small-card-information">
             <div class="card-title-line">
@@ -73,10 +75,10 @@ ${value.description}
           </div>
         </div>
         `;
-        return smallCardStandart;
-    }
-    getMediumCardCritical(value) {
-        let mediumCardCritical = `
+    return smallCardStandart;
+  }
+  public getMediumCardCritical(value: IJsonEventsObject) {
+    const mediumCardCritical = `
 								<div class="medium-card card-critical">
 						<div class="critical-card-container">
 							<div class="card-critical-block">
@@ -97,10 +99,10 @@ ${value.description}
 						</div>
 					</div>
                     `;
-        return mediumCardCritical;
-    }
-    getMediumCardSensor(value) {
-        let mediumCardSensor = `
+    return mediumCardCritical;
+  }
+  public getMediumCardSensor(value: IJsonEventsObject) {
+    const mediumCardSensor = `
 						<div class="medium-card">
 			   <div class="medium-card-information">
             <div class="card-title-line">
@@ -131,10 +133,10 @@ ${value.description}
           </div>
           </div>
                         `;
-        return mediumCardSensor;
-    }
-    getMediumCardMusic(value) {
-        let mediumCardMusic = `
+    return mediumCardSensor;
+  }
+  public getMediumCardMusic(value: IJsonEventsObject) {
+    const mediumCardMusic = `
 						<div class="medium-card">
 			   <div class="medium-card-information">
             <div class="card-title-line">
@@ -175,10 +177,10 @@ ${value.description}
 				</div>
 
                         `;
-        return mediumCardMusic;
-    }
-    getMediumCardFridge(value) {
-        let mediumCardFridge = `
+    return mediumCardMusic;
+  }
+  public getMediumCardFridge(value: IJsonEventsObject) {
+    const mediumCardFridge = `
 							<div class="medium-card">
 			   <div class="medium-card-information">
             <div class="card-title-line">
@@ -207,7 +209,6 @@ ${value.description}
           </div>
           </div>
           `;
-        return mediumCardFridge;
-    }
+    return mediumCardFridge;
+  }
 }
-exports.Cards = Cards;

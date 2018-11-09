@@ -1,8 +1,8 @@
 export const initCriticalCam = (): void => {
   const evCache = new Array();
-  const cam: HTMLElement = <HTMLElement>(
+  const cam: HTMLElement = (
     document.querySelector(".large-card-image")
-  );
+  ) as HTMLElement;
   let startPosY: number;
   let startPosX: number;
   let startBackX: number;
@@ -35,13 +35,14 @@ export const initCriticalCam = (): void => {
       startBackX = parseInt(bgx, 10);
       startBackY = parseInt(bgy, 10);
     }
-    if (evCache.length === 2)
+    if (evCache.length === 2) {
       prevAngle =
         Math.atan2(
           evCache[1].clientY - evCache[0].clientY,
-          evCache[1].clientX - evCache[0].clientX
+          evCache[1].clientX - evCache[0].clientX,
         ) *
         (180 / Math.PI);
+    }
     cam.addEventListener("pointermove", onmove);
   };
 
@@ -54,7 +55,7 @@ export const initCriticalCam = (): void => {
       }
     }
     // если одно нажатие
-    if (evCache.length === 1)
+    if (evCache.length === 1) {
       cam.style.backgroundPosition =
         startBackX +
         ev.clientX -
@@ -62,6 +63,7 @@ export const initCriticalCam = (): void => {
         "px " +
         (startBackY + ev.clientY - startPosY) +
         "px";
+    }
 
     // если два нажатия
     if (evCache.length === 2) {
@@ -70,7 +72,7 @@ export const initCriticalCam = (): void => {
         evCache[0].clientX,
         evCache[0].clientY,
         evCache[1].clientX,
-        evCache[1].clientY
+        evCache[1].clientY,
       );
       if (fingerDiff > prevDiff) {
         backSize = backSize + 1;
@@ -87,7 +89,7 @@ export const initCriticalCam = (): void => {
       const angle: number =
         Math.atan2(
           evCache[1].clientY - evCache[0].clientY,
-          evCache[1].clientX - evCache[0].clientX
+          evCache[1].clientX - evCache[0].clientX,
         ) *
         (180 / Math.PI);
 
@@ -120,5 +122,5 @@ export const initCriticalCam = (): void => {
   };
   cam.addEventListener("pointerdown", ondown);
   document.addEventListener("pointerup", onup);
-  cam.addEventListener("onpointerup", <EventHandlerNonNull>onup);
+  cam.addEventListener("onpointerup", onup as EventHandlerNonNull);
 };

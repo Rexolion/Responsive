@@ -1,27 +1,27 @@
-export interface jsonEvents {
-  events: jsonEventsObject[];
+export interface IJsonEvents {
+  events: IJsonEventsObject[];
 }
-export interface jsonEventsObject {
+export interface IJsonEventsObject {
   type: string;
   title: string;
   source: string;
   time: string;
   description: string;
   icon: string;
-  data: additionalData;
+  data: IAdditionalData;
   size: string;
 }
-interface additionalData {
+interface IAdditionalData {
   albumcover: string;
   artist: string;
-  track: musicTrack;
+  track: IMusicTrack;
   volume: number;
   buttons: string[];
   image: string;
   temperature: number;
   humidity: number;
 }
-interface musicTrack {
+interface IMusicTrack {
   name: string;
   length: string;
 }

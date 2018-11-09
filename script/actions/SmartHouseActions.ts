@@ -1,11 +1,18 @@
 import SmartHouseDispatcher from "../dispatcher/SmartHouseDispatcher";
 import {SmartHouseActionID} from "./SmartHouseActionID";
 
-class SmartHouseActionsStatic {
+export const SmartHouseButtonAction = {
 
-    public transition(link: string): void {
-        SmartHouseDispatcher.addListener("SMARTHOUSE_TRANSITION", {
-
+    transitionToCards: () => {
+        SmartHouseDispatcher.dispatch("SMARTHOUSE_CARDS_TRANSITION", {
+            actionType: "SMARTHOUSE_CARDS_TRASMARTHOUSE_CARDS_TRANSITION",
         });
-    }
-}
+    },
+
+    transtionToMultimedia: () => {
+        SmartHouseDispatcher.dispatch("SMARTHOUSE_MULTIMEDIA_TRANSITION", {
+            actionType: "SMARTHOUSE_MULTIMEDIA_TRANSITION",
+        });
+    },
+
+};
