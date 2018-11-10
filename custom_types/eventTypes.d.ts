@@ -1,0 +1,3 @@
+type JsonEvents = {
+    type: string
+}

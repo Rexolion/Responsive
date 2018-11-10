@@ -7,7 +7,6 @@ body {
   background-color: #FFFFFF;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 92px autohref="style/style.css" 64px;
   grid-template-areas: "h h h h h h h h h h h h ""m m m m m m m m m m m m""f f f f f f f f f f f f"
 }
 
@@ -246,6 +245,47 @@ body {
   width: 543px;
   height: auto;
 }
+.content-block {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,154px);
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+  justify-content: center;
+}   
+.video-volume {
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+.video-wrapper {
+  min-height: 300px;
+  position: relative;
+}
+.video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  transition: all .5s ease;
+  z-index: 1;
+  -webkit-filter: brightness(100%) contrast(100%);
+  filter: brightness(100%) contrast(100%);
+}
+.analyser {
+  position: absolute;
+  z-index: 5;
+  width: 30px;
+  height: 0;
+  bottom: 40px;
+  right: 0;
+  background: green;
+  transition: height .5s ease;
+}
 
 .medium-card:hover {
   background-color: #F3F3F3;
@@ -266,6 +306,92 @@ body {
   font-size: 24px;
   color: #333333;
   text-align: left;
+}
+
+.video-wrapper {
+  min-height: 300px;
+  position: relative;
+}
+
+.video {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 300px;
+  transition: all 0.5s ease;
+  z-index: 1;
+  filter: brightness(100%) contrast(100%)
+}
+
+.video_active {
+  z-index: 10;
+  background: #000000;
+}
+
+.video-controls-wrap {
+  box-sizing: border-box;
+  padding: 40px;
+  display: block;
+  width: 100%;
+}
+
+.video-controls {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 20;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+.video-controls_active {
+  height: 92px;
+}
+
+.controls-text {
+  float: left;
+}
+
+.video-control {
+  float: left;
+}
+
+.video-volume {
+  background: url("../img/sound_n.png");
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.video-volume_unmuted {
+  background: green;
+  background: url("../img/sound.png");
+  background-size: cover;
+}
+
+.analyser {
+  position: absolute;
+  z-index: 5;
+  width: 30px;
+  height: 0px;
+  bottom: 40px;
+  right: 0px;
+  background: green;
+  transition: height 0.5s ease;
+}
+
+.analyser_active {
+  position: fixed;
+  z-index: 15;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
 }
 
 .medium-card-details {
@@ -795,7 +921,6 @@ a {
 }
 .stream__row {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap; }
 
 /* POPUPS*/
