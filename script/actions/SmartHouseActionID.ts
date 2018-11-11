@@ -1,6 +1,0 @@
-export enum SmartHouseActionID {
-    SMARTHOUSE_TRANSITION,
-    SMARTHOUSE_CARD_DESTROY,
-    SMARTHOUSE_CARD_POPUP,
-
-}

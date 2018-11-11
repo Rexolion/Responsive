@@ -1,42 +1,29 @@
 {
-  "name": "shri_ht_responsive",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.html",
-  "scripts": {
-    "murphy": "murphy",
-    "http-server": "http-server -p 3102 --cors",
-    "start": "run-p http-server murphy",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "lint": "tslint -p tsconfig.json",
-    "format": "prettier --write \"script/**/*.ts\" \"script/**/*.js\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rexolion/Responsive.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Rexolion/Responsive/issues"
-  },
-  "homepage": "https://github.com/Rexolion/Responsive#readme",
-  "devDependencies": {
-    "@types/react": "^16.4.18"
-  },
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@types/hls.js": "^0.10.2",
-    "@types/node": "^10.12.1",
-    "@videojs/murphy": "^0.1.1",
-    "common-js": "^0.3.8",
-    "hls": "0.0.1",
-    "hls.js": "^0.11.0",
-    "http-server": "^0.11.1",
+    "@bem-react/classname": "^1.1.1",
+    "@bem-react/core": "^1.2.0",
+    "@bem-react/di": "^1.0.3",
     "npm": "^6.4.1",
-    "npm-run-all": "^4.1.3",
-    "prettier": "^1.14.3",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.3"
-  }
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-scripts": "2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

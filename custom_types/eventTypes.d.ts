@@ -1,3 +1,0 @@
-type JsonEvents = {
-    type: string
-}
