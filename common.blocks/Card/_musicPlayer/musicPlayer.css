@@ -1,0 +1,208 @@
+.Player-Track {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 15px;
+  }
+  
+  .Player-Cover {
+    grid-row: 1 / 3;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .Player-Artist {
+    grid-column: 2 / 3;
+    align-self: center;
+    font-size: 1.66rem;
+    font-weight: 400;
+  }
+  
+  .Player-RangeBox {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-column-gap: 15px;
+  }
+  
+  .Player-Control {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-top: 20px;
+  }
+  
+  .Player-Btn {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .Player-Btn img {
+    width: 100%;
+  }
+  
+  .Player-RangeVal {
+    align-self: center;
+    color: #b7b7b7;
+    font-size: 1.16rem;
+    font-weight: 400;
+  }
+  
+  .Player-Range {
+    align-self: center;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .Player-Range:focus {
+    outline: none;
+  }
+  
+  .Player-Range::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  
+  .Player-Range_type_time::-webkit-slider-thumb {
+    height: 20px;
+    width: 12px;
+    border-radius: 4.5px;
+    background: #d8d8d8;
+    border: 0px solid #000000;
+    box-sizing: content-box;
+    position: relative;
+    bottom: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .Player-Range_type_time::-moz-range-thumb {
+    height: 20px;
+    width: 12px;
+    border-radius: 4.5px;
+    background: #d8d8d8;
+    border: 0px solid #000000;
+    box-sizing: content-box;
+    position: relative;
+    bottom: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .Player-Range_type_time::-ms-thumb {
+    height: 20px;
+    width: 12px;
+    border-radius: 4.5px;
+    background: #d8d8d8;
+    border: 0px solid #000000;
+    box-sizing: content-box;
+    position: relative;
+    bottom: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .Player-Range_type_time::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    background-color: #979797;
+  }
+  
+  .Player-Range_type_time::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    background-color: #979797;
+  }
+  
+  .Player-Range_type_time::-ms-track {
+    width: 100%;
+    height: 1px;
+    background-color: #979797;
+  }
+  
+  .Player-Range_type_volume::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 26px;
+    background: #605757;
+    border: 0px solid #000000;
+    box-sizing: content-box;
+    position: relative;
+    bottom: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .Player-Range_type_volume::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 26px;
+    background: #605757;
+    border: 0px solid #000000;
+    box-sizing: content-box;
+    position: relative;
+    bottom: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .Player-Range_type_volume::-ms-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 26px;
+    background: #605757;
+    border: 0px solid #000000;
+    box-sizing: content-box;
+    position: relative;
+    bottom: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .Player-Range_type_volume::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(216, 216, 216, 0.3);
+  }
+  
+  .Player-Range_type_volume::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(216, 216, 216, 0.3);
+  }
+  
+  .Player-Range_type_volume::-ms-track {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(216, 216, 216, 0.3);
+  }
+  
+  @media screen and (max-width: 400px) {
+    .Player-Btn {
+      width: 45px;
+      margin-right: 10px;
+    }
+  }
+  
