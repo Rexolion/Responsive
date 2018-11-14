@@ -1,0 +1,204 @@
+.Card {
+position: relative;
+display: grid;
+grid-template-rows: 53px auto;
+grid-auto-rows: 1fr;
+grid-row-gap: 20px;
+padding: 25px 20px;
+border-radius: 20px;
+background-color: #fafafa;
+color: #333333;
+cursor: default;
+transition: .5s ease;
+}
+
+.Card-Title {
+display: flex;
+align-items: center;
+font-size: 2rem;
+font-weight: 600;
+}
+
+.Card-Meta {
+display: grid;
+grid-template-columns: auto 1fr auto;
+align-self: end;
+align-content: center;
+font-size: 1.5rem;
+}
+
+.Card-Source {
+grid-column: 1 / 2;
+}
+
+.Card-Time {
+grid-column: 3 / 4;
+}
+
+.Card_size_s .Card-Meta {
+grid-template-columns: auto;
+grid-template-rows: auto auto;
+grid-row-gap: 10px;
+}
+
+.Card_size_s .Card-Source {
+grid-column: span 3;
+}
+
+.Card_size_s .Card-Time {
+grid-column: span 3;
+}
+
+.Card-Icon {
+display: inline-block;
+margin-right: 20px;
+max-height: 52px;
+max-width: 52px;
+}
+
+.Card-Description {
+font-size: 1.66rem;
+}
+
+.Card_size_l .Card-Description {
+font-size: 2rem;
+}
+
+.Card_size_l .Card-Info {
+align-content: end;
+}
+
+.Card-Close {
+position: absolute;
+right: 20px;
+top: 15px;
+opacity: 0;
+cursor: pointer;
+transition: .3s ease;
+}
+
+.Card-Shape {
+position: absolute;
+right: 20px;
+bottom: 15px;
+opacity: 0;
+cursor: pointer;
+transition: .3s ease;
+}
+
+.Card-Info {
+display: grid;
+align-content: center;
+grid-row-gap: 30px;
+}
+
+.Card-Image {
+width: 100%;
+margin-bottom: 10px;
+border-radius: 20px;
+}
+
+.Card-Thermal {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.Card-Thermal > span {
+font-size: 1.5rem;
+}
+
+.Card-Thermal > span::after {
+content: attr(data-value);
+margin-left: 7px;
+font-weight: 600;
+}
+
+.Card-Btn {
+height: 54px;
+width: 132px;
+border-radius: 8px;
+border: 0;
+font-size: 1.66rem;
+font-weight: 600;
+cursor: pointer;
+}
+
+.Card-Btn:focus {
+outline: none;
+}
+
+.Card-Btn:active {
+box-shadow: 300px 0 0 0 rgba(253, 253, 253, 0.25) inset, -300px 0 0 0 rgba(255, 210, 210, 0.25) inset;
+}
+
+.Card-Btn_mod_true {
+margin-right: 18px;
+background-color: #ffd93e;
+}
+
+.Card-Btn_mod_false {
+background-color: #e5e5e5;
+}
+
+.Card_type_critical {
+padding: 0;
+padding-top: 25px;
+background-color: #db5341;
+color: #fff;
+}
+
+.Card_type_critical .Card-Title {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.Card_type_critical .Card-Source {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.Card_type_critical .Card-Time {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.Card_type_critical .Card-Info {
+position: relative;
+top: 1px;
+padding: 20px;
+border-radius: 18px;
+background-color: #fafafa;
+color: #333333;
+}
+
+@media screen and (max-width: 992px) {
+.Card_size_s {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.Card_size_m {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.Card_size_l {
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.Card-Close, .Card-Shape {
+    opacity: 1;
+}
+
+.Card-Icon {
+    margin-right: 10px;
+}
+
+.Card-Btn {
+    font-size: 2rem;
+}
+
+.Card_size_l .Card-Description {
+    font-size: 1.66rem;
+}
+}
