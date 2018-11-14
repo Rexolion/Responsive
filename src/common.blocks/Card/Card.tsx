@@ -15,8 +15,10 @@ export class Card extends React.Component {
 public props: ICardProps;
 
 public render() {
-const { cardData, className } = this.props;
-const { size, type, icon, title, source, time, description, data } = cardData;
+    const { cardData, className } = this.props;
+    const { size, type, icon, title, source, time, description, data } = cardData;
+    if(data === undefined) { throw Error; }
+
 
 return (
     <article className={`${className} ${card({ size, type })}`}>

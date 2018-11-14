@@ -1,7 +1,7 @@
 import { cn } from "@bem-react/classname";
 import { RegistryConsumer } from "@bem-react/di";
 import * as React from "react";
-import { IButtons, IClimate, IJsonEventData, IMusicPlayerData } from "../Card/_interface/card.interface";
+import { IJsonEventData } from "../Card/_interface/card.interface";
 import { card, ICardProps } from "../Card/Card";
 import "./Container.css";
 
@@ -17,7 +17,8 @@ export class Container extends React.Component {
     public props: IContainerProps;
 
     public render() {
-        const { events, className, device } = this.props;
+        const { events, className } = this.props;
+        if (events === undefined) { throw Error; }
         return (
             <RegistryConsumer>
                 {(registries) => {

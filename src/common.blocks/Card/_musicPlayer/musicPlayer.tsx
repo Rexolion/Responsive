@@ -1,7 +1,7 @@
 import { cn } from "@bem-react/classname";
 import * as React from "react";
 import { IMusicPlayerData } from "../_interface/card.interface";
-import "./player.scss";
+import "./musicPlayer.css";
 
 interface IPlayerProps {
     playerData?: IMusicPlayerData;
@@ -19,15 +19,20 @@ export class MusicPlayer extends React.Component<{}, any> {
 
     constructor(props: IPlayerProps) {
         super(props);
+            if (props.playerData !== undefined) {
         this.state = {
-            volume: props.playerData.volume,
+                volume: props.playerData.volume,
+
+            }
         };
     }
 
     public render() {
+        if (!this.props.playerData) { throw Error; }
+
         const { albumcover, artist, track } = this.props.playerData;
         const { volume } = this.state;
-
+        
         return (
             <div className={this.props.className || player()}>
                 <div className={player("Track")}>
@@ -53,7 +58,8 @@ export class MusicPlayer extends React.Component<{}, any> {
                 </div>
             </div>
         );
-    }
+    
+};
 
     public handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({ volume: ev.target.value });

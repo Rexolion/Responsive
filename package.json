@@ -6,26 +6,21 @@
     "@bem-react/classname": "^1.1.1",
     "@bem-react/core": "^1.2.0",
     "@bem-react/di": "^1.0.3",
-    "@types/react": "^16.7.3",
-    "npm": "^6.4.1",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-scripts": "2.1.1",
-    "typescript": "^3.1.6"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts-ts": "3.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.7",
+    "@types/react": "^16.7.6",
+    "@types/react-dom": "^16.0.9",
+    "typescript": "^3.1.6"
+  }
 }

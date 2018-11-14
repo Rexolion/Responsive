@@ -1,6 +1,6 @@
 import { cn } from "@bem-react/classname";
 import * as React from "react";
-import "./footer.scss";
+import "./Footer.css";
 
 export interface IFooterProps {
     className?: string;

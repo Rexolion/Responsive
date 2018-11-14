@@ -1,6 +1,6 @@
 import { cn } from "@bem-react/classname";
 import * as React from "react";
-import "./header.css";
+import "./Header.css";
 
 export interface IHeaderProps {
     className?: string;

@@ -5,7 +5,7 @@ import { IJsonEventData } from "../Card/_interface/card.interface";
 import { container, IContainerProps } from "../Container/Container";
 import { footer, IFooterProps } from "../Footer/Footer";
 import { header, IHeaderProps } from "../Header/Header";
-import "./root.scss";
+import "./Root.css";
 
 export interface IRootProps {
     events: {};
@@ -20,6 +20,7 @@ export class Root extends React.Component {
 
     public render() {
         const { events, device, className } = this.props;
+        if (container() === undefined) { throw Error; }
         return (
             <RegistryConsumer>
                 {(registries) => {

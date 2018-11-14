@@ -1,33 +1,35 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "baseUrl": ".",
+    "outDir": "build/dist",
     "module": "esnext",
-    "resolveJsonModule": true,
-    "outDir": "./build",
-    "noImplicitAny": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "custom_types"
-    ],
-    "types": [],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
     "allowJs": true,
-    "skipLibCheck": false,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
     "moduleResolution": "node",
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
-    "node_modules/*"
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "*.json",
+    "**/*.json"
   ]
 }
