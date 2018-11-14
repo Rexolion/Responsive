@@ -1,0 +1,39 @@
+.Header {
+grid-area: h;
+border-bottom: 1px solid #f0f0f0;
+font-size: 1.33rem;
+font-weight: 600;
+}
+
+.Header-Logo {
+width: 108px;
+margin-right: 50px;
+}
+
+.Header-Container {
+display: flex;
+align-items: center;
+max-width: 1366px;
+height: 90px;
+padding-left: 40px;
+margin: 0 auto;
+}
+
+.Nav-Item {
+text-decoration: none;
+transition: opacity .4s ease;
+}
+
+.Nav-Item_size_large {
+font-size: 16px;
+line-height: 20px;
+vertical-align: sub;
+opacity: 0.6;
+color: #333333;
+margin-right: 26px;
+}
+
+.Nav-Item_active {
+opacity: 1;
+cursor: default;
+}
