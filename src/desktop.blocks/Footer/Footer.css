@@ -1,0 +1,8 @@
+.Footer_device_desktop {
+  justify-content: space-between;
+  max-width: 1366px;
+}
+.Footer_device_desktop .Footer-Nav {
+  margin-left: -10px;
+  margin-right: -10px;
+}

@@ -1,0 +1,6 @@
+.Footer_device_mobile {
+  justify-content: center;
+}
+.Footer_device_mobile .Footer-Nav {
+  display: none;
+}

@@ -1,0 +1,12 @@
+.Root_device_mobile {
+  grid-template-rows: 60px 1fr 64px;
+  transition: transform .5s ease;
+}
+
+.openNav .Header-Nav {
+  opacity: 1;
+}
+
+.openNav .Root_device_mobile {
+  transform: translateX(-200px);
+}

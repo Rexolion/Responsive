@@ -1,31 +1,32 @@
-import { cn } from "@bem-react/classname";
-import * as React from "react";
-import "./Footer.css";
+import { cn } from '@bem-react/classname'
+import * as React from 'react';
+import './Footer.css'
 
 export interface IFooterProps {
-    className?: string;
-    device?: string;
+  className?: string,
+  device?: string
 }
 
-export const footer = cn("Footer");
-const navigation = cn("Navigation");
+export const footer = cn('Footer')
+const nav = cn('Navigation')
 
 export class Footer extends React.Component {
-    public props: IFooterProps;
+  public props: IFooterProps
 
-    public render() {
-        return (
-            <footer className={this.props.className || footer()}>
-                <nav className={`${footer("Nav")} ${navigation()}`}>
-                    <a href="#" className={navigation("Item", { size: "small" })}>Помощь</a>
-                    <a href="#" className={navigation("Item", { size: "small" })}>Обратная связь</a>
-                    <a href="#" className={navigation("Item", { size: "small" })}>Разработчикам</a>
-                    <a href="#" className={navigation("Item", { size: "small" })}>Условия использования</a>
-                    <a href="./_license/license.pdf" className={navigation("Item", { size: "small" })}>
-                        Лицензия
-            </a>
-                </nav>
-            </footer>
-        );
-    }
+  public render() {
+    return (
+      <footer className={this.props.className || footer()}>
+        <nav className={`${footer('Nav')} ${nav()}`}>
+          <a href="#" className={nav('Item', { size: 'small' })}>Помощь</a>
+          <a href="#" className={nav('Item', { size: 'small' })}>Обратная связь</a>
+          <a href="#" className={nav('Item', { size: 'small' })}>Разработчикам</a>
+          <a href="#" className={nav('Item', { size: 'small' })}>Условия использования</a>
+          <a href="__license/license.pdf"
+          className={nav('Item', { size: 'small' })}>
+            Авторские права
+          </a>
+        </nav>
+      </footer>
+    )
+  }
 }

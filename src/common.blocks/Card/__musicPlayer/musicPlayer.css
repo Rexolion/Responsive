@@ -14,7 +14,7 @@
   .Player-Artist {
     grid-column: 2 / 3;
     align-self: center;
-    font-size: 1.66rem;
+    font-size: 20px;
     font-weight: 400;
   }
   

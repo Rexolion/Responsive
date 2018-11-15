@@ -1,0 +1,25 @@
+.Card_device_desktop:hover {
+  background: #f3f3f3;
+  box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+}
+.Card_device_desktop:hover .Card-Close {
+  opacity: 1;
+}
+.Card_device_desktop:hover .Card-Shape {
+  opacity: 1;
+}
+.Card_device_desktop.Card_type_critical:hover {
+  background-color: #bb4b3c;
+}
+.Card_device_desktop.Card_size_s {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.Card_device_desktop.Card_size_m {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+.Card_device_desktop.Card_size_l {
+  grid-column: span 4;
+  grid-row: span 3;
+}

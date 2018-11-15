@@ -15,8 +15,7 @@ transition: .5s ease;
 .Card-Title {
 display: flex;
 align-items: center;
-font-size: 2rem;
-font-weight: 600;
+font-size: 24px;
 }
 
 .Card-Meta {
@@ -24,7 +23,7 @@ display: grid;
 grid-template-columns: auto 1fr auto;
 align-self: end;
 align-content: center;
-font-size: 1.5rem;
+font-size: 18px;
 }
 
 .Card-Source {
@@ -57,11 +56,11 @@ max-width: 52px;
 }
 
 .Card-Description {
-font-size: 1.66rem;
+font-size: 20px;
 }
 
 .Card_size_l .Card-Description {
-font-size: 2rem;
+font-size: 24px;
 }
 
 .Card_size_l .Card-Info {
@@ -105,7 +104,7 @@ margin-bottom: 10px;
 }
 
 .Card-Thermal > span {
-font-size: 1.5rem;
+font-size: 18px;
 }
 
 .Card-Thermal > span::after {
@@ -119,7 +118,7 @@ height: 54px;
 width: 132px;
 border-radius: 8px;
 border: 0;
-font-size: 1.66rem;
+font-size: 20px;
 font-weight: 600;
 cursor: pointer;
 }

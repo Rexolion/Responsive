@@ -1,0 +1,51 @@
+.Card_device_mobile {
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.Card_device_mobile.Card_size_s {
+  grid-column: 1;
+  grid-row: span 1;
+}
+.Card_device_mobile.Card_size_m {
+  grid-column: 1;
+  grid-row: span 2;
+}
+.Card_device_mobile.Card_size_l {
+  grid-column: 1;
+  grid-row: span 3;
+}
+.Card_device_mobile .Card-Image {
+  margin-bottom: 0;
+}
+.Card_device_mobile.Card_type_critical {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.Card_device_mobile.Card_type_critical .Card-Info {
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.Card_device_mobile.Card_type_s .Card-Meta {
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
+  grid-row-gap: none;
+}
+.Card_device_mobile.Card_type_s .Card-Source {
+  grid-column: 0.5;
+}
+.Card_device_mobile.Card_type_s .Card-Time {
+  grid-column: 0.75;
+}
+@media screen and (max-width: 355px) {
+  .Card-Btn {
+    display: block;
+    width: 100%;
+  }
+  .Card-Btn_mod_true {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

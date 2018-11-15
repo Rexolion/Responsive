@@ -1,0 +1,9 @@
+.Root_device_desktop {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 90px 1fr 64px;
+  grid-template-areas: 'h h h h h h' 'c c c c c c' 'f f f f f f';
+  min-height: 100%;
+  color: #333;
+  transition: filter .5s ease;
+}

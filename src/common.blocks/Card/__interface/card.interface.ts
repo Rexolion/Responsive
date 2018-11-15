@@ -22,5 +22,5 @@ export interface IJsonEventData {
     description: string | null;
     icon: string;
     size: string;
-    data?: IClimate | IMusicPlayerData | IButtons;
+    data: IClimate | IMusicPlayerData | IButtons;
 }
